@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+}
+.container .typed-text {
+  overflow: hidden; /* Hide text beyond the element's width */
+  white-space: nowrap; /* Prevent text wrapping to a new line */
+  width: 0; /* Start with zero width */
+  animation: typing 3s steps(40, end) forwards infinite; /* Customize animation */
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.container .typed-text:after {
+  content: "";
+  border-right: 0.15em solid orange; /* Cursor color */
+  animation: blink 0.7s step-end infinite; /* Cursor blink animation */
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
